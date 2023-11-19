@@ -78,7 +78,7 @@ public class RegisController {
 		String image = uploadConfig.uploadFile(account.getFile());
 		account.setAvatar(image);
 		String random = mailService.randomKey();
-		account.setEnable(0);
+		account.setEnable(1);
 		account.setActivationkey(random);
 		account.setPassword(passwordEncoder.encode(account.getPassword()));
 		Account result = accountDao.save(account);
@@ -87,7 +87,7 @@ public class RegisController {
 		userRole.setAccount(result);
 		userRole.setAuthority(authority);
 		accountDao.addRole(userRole);
-		mailService.sendMail(account.getEmail(),"xác nhận tài khoản", "http://localhost:8080/shopdh/actived?key="+random);
+//		mailService.sendMail(account.getEmail(),"xác nhận tài khoản", "http://localhost:8080/shopdh/actived?key="+random);
 		return "redirect:login";
 	}
 	

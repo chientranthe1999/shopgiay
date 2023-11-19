@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 @EnableAsync
 public class MailService {
 	
-	final String username = "vnua.edu.hieu0210@gmail.com";
-    final String password = "zjyyntgmdjvhvibk";
+	final String username = "tranthechien2012@gmail.com";
+    final String password = "dsgrcqdhmklynfoi";
     
     @Async
 	public void sendMail(String to,String subject, String content) {
@@ -27,7 +27,7 @@ public class MailService {
 		prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "465");
         prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.socketFactory.port", "465");
+        prop.put("mail.smtp.ssl.enable", "true");
         prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         
         Session session = Session.getInstance(prop,

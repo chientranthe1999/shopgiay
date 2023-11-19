@@ -9,8 +9,5 @@
         <module name="shopgiay" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="shopdh" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
