@@ -10,7 +10,8 @@
 	<div class="col-md-12" style="margin-top: 30px">
 	    <img src="" class="logo-web-login">
 	</div>
-	<% if (request.getParameter("error").equals("1")) { %>
+
+	<% if ("1".equals(request.getParameter("error"))) { %>
 		<div class="alert alert-warning w-50 mx-auto" role="alert">
 			Password or username is incorrect
 		</div>

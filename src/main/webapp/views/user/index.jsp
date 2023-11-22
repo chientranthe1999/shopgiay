@@ -11,13 +11,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img style="height: 700px;" src="https://thietke6d.com/wp-content/uploads/2021/05/banner-quang-cao-giay-7.webp" class="d-block w-100" alt="...">
+            <img style="height: 700px;" src="https://donganshoes.vn/wp-content/uploads/2021/12/banner.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img style="height: 700px;" src="https://mcdn.coolmate.me/image/September2021/giay-the-thao-1.jpg" class="d-block w-100" alt="...">
+            <img style="height: 700px;" src="https://censor.vn/wp-content/uploads/2023/05/bannerairjordan1-1400x678.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img style="height: 700px;" src="https://img.freepik.com/free-psd/black-friday-super-sale-web-banner-template_106176-1649.jpg?size=626&ext=jpg&ga=GA1.1.1917480170.1682134952&semt=ais" class="d-block w-100" alt="...">
+            <img style="height: 700px;" src="https://file.hstatic.net/1000230642/collection/3_da9a91027cd0488581c18e767bd6e453.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -42,20 +42,22 @@
                 <div class="tab-pane fade show active accordion-item" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <div class="row">
                         <div class="col-md-10 list-item row" id="listNewProduct">
-                        <c:forEach items="${newwatch}" var="list">
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 signle-item" >
-                                <a href="detail?id=${list.id}"><img class="img-item" src="${list.banner}"></a>
-                                <div class="small-image">
-                                <c:forEach items="${list.imageWatch}" var="img">
-                                    <img src="${img.linkImage}">
-                                </c:forEach>
+                            <c:forEach items="${newwatch}" var="list">
+                                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 single-item" >
+                                    <a href="detail?id=${list.id}" style="display: block;">
+                                        <img class="img-item" src="${list.banner}">
+<%--                                        <div class="small-image">--%>
+<%--                                            <c:forEach items="${list.imageWatch}" var="img">--%>
+<%--                                                <img src="${img.linkImage}">--%>
+<%--                                            </c:forEach>--%>
+<%--                                        </div>--%>
+                                        <div class="content-item-single">
+                                            <a href="detail?id=${list.id}"><p class="name-single-item">${list.name}</p></a>
+                                            <p style="text-align: center;" class="price-item"><fmt:formatNumber value="${list.price}" maxFractionDigits="3"/>đ</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="content-item-signle">
-                                    <a href="detail?id=${list.id}"><p class="name-signle-item">${list.name}</p></a>
-                                    <p style="text-align: center;" class="price-item"><fmt:formatNumber value="${list.price}" maxFractionDigits="3"/>đ</p>
-                                </div>
-                            </div>
-                        </c:forEach>
+                            </c:forEach>
                         </div>
 
                         <div class="col-md-12">
@@ -73,22 +75,6 @@
                         </div>
                     </div>
                 </div>
-               <%--  <div class="tab-pane fade accordion-item" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                    <c:forEach items="${spbanchay}" var="list">
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 signle-item" >
-                                <a href="detail?id=${list.id}"><img class="img-item" src="${list.banner}"></a>
-                                <div class="small-image">
-                                <c:forEach items="${list.imageWatch}" var="img">
-                                    <img src="${img.linkImage}">
-                                </c:forEach>
-                                </div>
-                                <div class="content-item-signle">
-                                    <a href="detail?id=${list.id}"><p class="name-signle-item">${list.name}</p></a>
-                                    <p style="text-align: center;" class="price-item"><fmt:formatNumber value="${list.price}" maxFractionDigits="3"/>đ</p>
-                                </div>
-                            </div>
-                        </c:forEach>
-                </div> --%>
             </div>
             
         </div>

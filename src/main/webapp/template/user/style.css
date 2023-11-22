@@ -92,14 +92,16 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
 }
-.img-item{
+.img-item {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: contain;
 }
-.signle-item{
+.single-item {
     margin-top: 50px;
+    /*height: 100%;*/
 }
-.name-signle-item{
+.name-single-item {
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis; 
@@ -108,14 +110,14 @@ body{
     color: #807e7e;
     padding-top: 10px;
 }
-.content-item-signle p {
+.content-item-single p {
     margin-top: 0em; 
     margin-bottom: 0em;
 }
-.content-item-signle{
+.content-item-single {
     padding-left: 5%;
 }
-.add-cart-item{
+.add-cart-item {
     background-color: #f7a900;
     border: none;
     color: #fff;
@@ -123,14 +125,14 @@ body{
     margin-top: 5px;
 }
 
-.old-price-item{
+.old-price-item {
     font-weight: bold;
     font-size: 12px;
     display: inline-block;
     text-decoration: line-through;
     color: #f7a900;
 }
-.cart-item{
+.cart-item {
     font-weight: bold;
     font-size: 14px;
     display: inline-block;
@@ -138,11 +140,11 @@ body{
     color: #f7a900;
     cursor: pointer;
 }
-.list-item{
+.list-item {
     width: 80%;
     margin-left: 10%;
 }
-.signle-item a{
+.single-item a{
     text-decoration: none;
 }
 .price-item{
@@ -920,27 +922,31 @@ text-align: center;
     width: 20%;
 }
 
-.small-image img{
+.small-image img {
     position: relative;
     margin: 0;
     padding: 0;
     display: inline-block;
 }
-.small-image{
+.small-image {
     margin-left: 5%;
     padding: 0;
     text-align: center;
 }
 
-.signle-item:hover .small-image, .signle-item.hover .small-image {
+.single-item:hover .small-image {
     display: block; 
 }
 
-.signle-item:hover .img-item, .signle-item.hover .img-item {
-    margin-top: -30px;
+.single-item, .img-item {
+    transition: all 0.5s ease-in;
 }
 
-#mycomment{
+.single-item:hover {
+    transform: translateY(-10px);
+}
+
+#mycomment {
     margin-top: 100px;
 }
 

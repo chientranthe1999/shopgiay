@@ -79,15 +79,15 @@
                     <div class="col-md-10 list-item row" id="listNewProduct">
                         <!-- <p class="hienthisoluong">Hiển thị 1-12 của 46 kết quả</p> -->
                         <c:forEach items="${listproduct}" var="list">
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 signle-item" >
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 single-item" >
                                 <a href="detail?id=${list.id}"><img class="img-item" src="${list.banner}"></a>
                                 <div class="small-image">
                                 <c:forEach items="${list.imageWatch}" var="img">
                                     <img src="${img.linkImage}">
                                 </c:forEach>
                                 </div>
-                                <div class="content-item-signle">
-                                    <a href="detail?id=${list.id}"><p class="name-signle-item">${list.name}</p></a>
+                                <div class="content-item-single">
+                                    <a href="detail?id=${list.id}"><p class="name-single-item">${list.name}</p></a>
                                     <p style="text-align: center;" class="price-item"><fmt:formatNumber value="${list.price}" maxFractionDigits="3"/>đ</p>
                                 </div>
                             </div>

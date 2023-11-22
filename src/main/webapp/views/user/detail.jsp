@@ -62,8 +62,8 @@
                 <c:forEach items="${listlienquan}" var="list">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
                         <a href="detail?id=${list.id}"><img class="img-item" src="${list.banner}"></a>
-                        <div class="content-item-signle">
-                            <a href=""><p class="name-signle-item">${list.name}</p>
+                        <div class="content-item-single">
+                            <a href=""><p class="name-single-item">${list.name}</p>
                             <p class="price-item"><fmt:formatNumber value="${list.price}" maxFractionDigits="3"/>đ</p></a>
                         </div>
                     </div>
