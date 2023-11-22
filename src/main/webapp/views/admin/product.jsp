@@ -58,13 +58,13 @@
 		</c:if>
 	<c:if test="${not empty success}">
 	   <script type="text/javascript">
-			   swal({
-		            title: "Thông báo", 
-		            text: "Đã xóa sản phẩm thành công", 
-		            type: "success"
-		          },
-		        function(){ 
-		        });
+           swal({
+                title: "Thông báo",
+                text: "Đã xóa sản phẩm thành công",
+                type: "success"
+              },
+            function(){
+            });
 		   </script>
 	</c:if>
 </body>

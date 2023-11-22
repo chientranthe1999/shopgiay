@@ -39,7 +39,7 @@ body{
     margin-left: 10%;
 }
 #navbarSupportedContent ul li{
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 #navbarSupportedContent ul li a {
     color: #000;

@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TRANG CHỦ</title>
+<title>Shop giày Candy</title>
 </head>
 <body>
 <%@include file="../../common/user/menuuser.jsp"%>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img style="height: 700px;" src="https://img.freepik.com/free-vector/modern-black-friday-sale-banner-template-with-3d-background-red-splash_1361-1877.jpg?size=626&ext=jpg&ga=GA1.1.1917480170.1682134952&semt=ais" class="d-block w-100" alt="...">
+            <img style="height: 700px;" src="https://thietke6d.com/wp-content/uploads/2021/05/banner-quang-cao-giay-7.webp" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img style="height: 700px;" src="https://freehindidesign.com/wp-content/uploads/2022/05/SHOES-SHOP-BANNER-TEMPLATE.webp" class="d-block w-100" alt="...">
+            <img style="height: 700px;" src="https://mcdn.coolmate.me/image/September2021/giay-the-thao-1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
             <img style="height: 700px;" src="https://img.freepik.com/free-psd/black-friday-super-sale-web-banner-template_106176-1649.jpg?size=626&ext=jpg&ga=GA1.1.1917480170.1682134952&semt=ais" class="d-block w-100" alt="...">
@@ -37,9 +37,6 @@
                 <li class="nav-item tab-li" role="presentation">
                   <button class="active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Sản phẩm trong cửa hàng</button>
                 </li>
-                <!-- li class="nav-item tab-li" role="presentation">
-                  <button class="" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Sản phẩm bán chạy</button>
-                </li> -->
             </ul>
             <div class="tab-content accordion" id="myTabContent">
                 <div class="tab-pane fade show active accordion-item" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
@@ -60,7 +57,7 @@
                             </div>
                         </c:forEach>
                         </div>
-                     
+
                         <div class="col-md-12">
                             <div class="paginationss">
                                 <nav aria-label="Page navigation example">

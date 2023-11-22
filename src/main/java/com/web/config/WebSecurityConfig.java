@@ -74,21 +74,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// Ngoại lệ AccessDeniedException sẽ ném ra.
 		http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/login");
 
-		// Cấu hình cho Login Form.
-		http.authorizeRequests().and().formLogin()//
+		http.authorizeRequests().and().formLogin()
+			.loginProcessingUrl("/j_spring_security_check") // Submit URL
+			.loginPage("/login")
+			.successHandler(loginSuccessHandler)
+			.failureUrl("/login?error=1")
+			.usernameParameter("username")//
+			.passwordParameter("password")
 
-				// Submit URL của trang login
-				.loginProcessingUrl("/j_spring_security_check") // Submit URL
-				.loginPage("/login")
-				.successHandler(loginSuccessHandler)
-//				.defaultSuccessUrl("/trang-chu")//
-				.failureUrl("/login?error=true")//
-				.usernameParameter("username")//
-				.passwordParameter("password")
-
-				// Cấu hình cho Logout Page.
-				.and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
-
+			// Cấu hình cho Logout Page.
+			.and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
 	}
 
 }

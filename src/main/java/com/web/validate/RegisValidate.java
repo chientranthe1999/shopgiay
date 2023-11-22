@@ -26,9 +26,9 @@ public class RegisValidate implements Validator{
 		Account account = (Account) target;
 		ValidationUtils.rejectIfEmpty(errors, "fullname", "error.fullname", "Họ tên không được trống");
 		ValidationUtils.rejectIfEmpty(errors, "password", "error.password", "Password không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "username", "error.username", "username không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "email", "error.email", "email không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "address", "error.address", "address không được trống");
+		ValidationUtils.rejectIfEmpty(errors, "username", "error.username", "Tên đăng nhập không được trống");
+		ValidationUtils.rejectIfEmpty(errors, "email", "error.email", "Email không được trống");
+		ValidationUtils.rejectIfEmpty(errors, "address", "error.address", "Address không được trống");
 		ValidationUtils.rejectIfEmpty(errors, "phone", "error.phone", "Số điện thoại không được trống");
 		if(account.getFile().isEmpty()) {
 			errors.rejectValue("file", "missing.file");

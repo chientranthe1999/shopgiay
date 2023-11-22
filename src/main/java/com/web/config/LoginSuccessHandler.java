@@ -21,8 +21,6 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
     @Autowired
     private UserInfoDAO userInfoDAO;
 
-
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                                         Authentication authentication) throws ServletException, IOException {
@@ -41,8 +39,6 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
         response.sendRedirect(redirectURL);
 
     }
-
-
 
     public boolean checkRole(String role,List<String> list) {
         for(String s : list) {
