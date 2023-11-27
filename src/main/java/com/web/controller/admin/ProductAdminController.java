@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,9 +59,6 @@ public class ProductAdminController {
 	public String welcomePage(Model model) {
 		model.addAttribute("gia", new Double(3000000));
 		model.addAttribute("listwatch", watchDao.findAll());
-		watchDao.findAll().forEach(p->{
-			System.out.println(p);
-		});
 		return "/views/admin/product";
 	}
 	
@@ -73,9 +71,7 @@ public class ProductAdminController {
 		} else {
 			watch = watchDao.findById(id);
 		}
-		watch.getColorWatchs().forEach(p->{
-			System.out.println(p);
-		});
+
 		model.addAttribute("watch", watch);
 		model.addAttribute("watchp", watch);
 		model.addAttribute("categories", categoryDao.findAll());
@@ -99,6 +95,17 @@ public class ProductAdminController {
 	public String addproductPost(Model model,@Valid @ModelAttribute("watch") Watch watch, 
 			BindingResult bindingResult, @RequestParam("listcolor") String listcolor[],
 			 @RequestParam("danhmuc") Integer danhmuc,@RequestParam("thuonghieu") Integer thuonghieu) {
+
+		for (FieldError error : bindingResult.getFieldErrors()) {
+			if (error.getField().equals("price") && error.getCode().equals("typeMismatch")) {
+				// Handle the type conversion error for the 'price' field
+				bindingResult.rejectValue("price", "invalid.price", "Invalid price format");
+				break; // Break out of the loop after handling the specific error
+			}
+		}
+		watch.setName(watch.getName().trim());
+		watch.setDescription(watch.getDescription().trim());
+		System.out.println(bindingResult);
 		productValidate.validate(watch, bindingResult);
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("categories", categoryDao.findAll());

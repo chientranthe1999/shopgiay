@@ -24,7 +24,7 @@ public class WatchDao {
 	public List<Watch> findAll(){
 		List<Watch> list = new ArrayList<Watch>();
 		Session session = sessionFactory.getCurrentSession();
-		String sql = "select c from Watch c";
+		String sql = "select c from Watch c order by id desc";
 		Query query = session.createQuery(sql);
 		list = query.list();
 		return list;

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,7 @@
 	<div class="login-form">
 	     <div class="row">
 	         <div class="col-lg-6">
-	             <img src="template/user/image/logologin1.png" class="img-login">
+	             <img src="template/user/image/login.jpg" class="img-login">
 	         </div>
 			 <form class="row col-lg-6 needs-validation" action="${pageContext.request.contextPath}/j_spring_security_check" method='POST' novalidate>
 				 <div class="col-md-12">

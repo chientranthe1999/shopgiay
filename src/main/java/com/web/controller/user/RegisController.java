@@ -71,6 +71,11 @@ public class RegisController {
 	@RequestMapping(value = { "/regispost" }, method = RequestMethod.POST)
 	public String addblogPost(HttpServletRequest request, 
 			@Valid @ModelAttribute("account") Account account, BindingResult bindingResult) throws IOException {
+
+		account.setUsername(account.getUsername().trim());
+		account.setEmail(account.getEmail().trim());
+		account.setFullname(account.getFullname().trim());
+		account.setAddress(account.getAddress().trim());
 		regisValidate.validate(account, bindingResult);
 		if (bindingResult.hasErrors()) {
 			return "/views/user/regis";
@@ -87,7 +92,6 @@ public class RegisController {
 		userRole.setAccount(result);
 		userRole.setAuthority(authority);
 		accountDao.addRole(userRole);
-//		mailService.sendMail(account.getEmail(),"xác nhận tài khoản", "http://localhost:8080/shopdh/actived?key="+random);
 		return "redirect:login";
 	}
 	

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ĐĂNG NHẬP/ĐĂNG KÍ</title>
+<title>Đăng ký</title>
 </head>
 <body>
 	<%@include file="../../common/user/menuuser.jsp"%>
@@ -30,7 +30,7 @@
          		</div>
 	         	</div>
                 <label>Email</label>
-                <form:input id="email" type="email" placeholder="email" class="form-control" path="email" />
+                <form:input id="email" placeholder="email" class="form-control" path="email" />
                 <form:errors class="error" path="email"></form:errors><br>
                 <label>Số điện thoại</label>
                 <form:input id="phone" type="text" placeholder="phone" class="form-control" path="phone" />

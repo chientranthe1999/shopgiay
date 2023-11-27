@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
@@ -32,11 +33,11 @@ public class Watch {
 	@NotNull(message = "Tên sản phẩm không được trống")
 	private String name;
 
-//	@NotNull(message="giá sản phẩm không được trống")
+	@NotNull(message="Giá sản phẩm không được trống")
 	private Double price;
 
-	@NotNull(message = "số lượng sản phẩm không được trống")
-	@Min(value = 1, message = "số lượng sản phẩm không được nhỏ hơn 1")
+	@NotNull(message = "Số lượng sản phẩm không được trống")
+	@Min(value = 1, message = "Số lượng sản phẩm không được nhỏ hơn 1")
 	private Integer quantity;
 
 	private String banner;
