@@ -32,9 +32,7 @@ public class ProductUserController {
 	
 	@Autowired
 	private TradeMarkDao tradeMarkDao;
-	
-	
-	
+
 	@RequestMapping(value = { "/product" }, method = RequestMethod.GET)
 	public String product(Model model, @RequestParam(value = "khoangia", required = false) String khoanggia,
 			@RequestParam(value = "danhmuc", required = false) Integer iddanhmuc,
@@ -65,7 +63,6 @@ public class ProductUserController {
 			model.addAttribute("totalpage", listpage);
 		}
 		else if(cate != null) {
-			System.out.println("+++++++++++++++++");
 			model.addAttribute("listproduct", watchDao.listWatchPageByCate(new Pageable(Contains.sizeProduct, p), cate ));
 			for(int i=1; i<=watchDao.getTotalPageByCate(new Pageable(Contains.sizeProduct, 0), cate); i++) {
 				listpage.add(i);
@@ -77,10 +74,7 @@ public class ProductUserController {
 				small = Double.valueOf(khoanggia.split("-")[0]);
 				lager = Double.valueOf(khoanggia.split("-")[1]);
 			}
-			System.out.println(small);
-			System.out.println(lager);
-			System.out.println(iddanhmuc);
-			System.out.println(idthuonghieu);
+
 			String hql = "select c from Watch c where c.price >= :small and c.price <= :lager ";
 			String hqlcount = "select count(c.id) from Watch c where c.price >= :small and c.price <= :lager ";
 			if(iddanhmuc == -1) {
@@ -100,7 +94,6 @@ public class ProductUserController {
 				hqlcount += "and c.tradeMark.id != :idtrademark ";
 			}
 			hql += " order by c.id desc";
-			System.out.println(hql);
 			model.addAttribute("listproduct", watchDao.listWatchPageSearch(
 					new Pageable(Contains.sizeProduct, p), hql,small, lager, iddanhmuc, idthuonghieu));
 			

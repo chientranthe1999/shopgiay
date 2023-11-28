@@ -1,6 +1,7 @@
 package com.web.controller.admin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -52,9 +53,7 @@ public class ProductAdminController {
 	private ImageWatchDao imageWatchDao;
 	
 	private UploadConfig uploadConfig = new UploadConfig();
-	
-//	private ColorInit colorInit = new ColorInit();
-	
+
 	@RequestMapping(value = { "/admin/product" }, method = RequestMethod.GET)
 	public String welcomePage(Model model) {
 		model.addAttribute("gia", new Double(3000000));
@@ -66,7 +65,6 @@ public class ProductAdminController {
 	public String addproduct(Model model, @RequestParam(value = "id", required = false) Integer id) {
 		Watch watch = null;
 		if (id == null) {
-			
 			watch = new Watch();
 		} else {
 			watch = watchDao.findById(id);
@@ -96,16 +94,12 @@ public class ProductAdminController {
 			BindingResult bindingResult, @RequestParam("listcolor") String listcolor[],
 			 @RequestParam("danhmuc") Integer danhmuc,@RequestParam("thuonghieu") Integer thuonghieu) {
 
-		for (FieldError error : bindingResult.getFieldErrors()) {
-			if (error.getField().equals("price") && error.getCode().equals("typeMismatch")) {
-				// Handle the type conversion error for the 'price' field
-				bindingResult.rejectValue("price", "invalid.price", "Invalid price format");
-				break; // Break out of the loop after handling the specific error
-			}
+		if(listcolor.length == 0) {
+			bindingResult.rejectValue("listcolor", "invalid.typeMismatch", "The value is not of the correct type.");
 		}
+
 		watch.setName(watch.getName().trim());
 		watch.setDescription(watch.getDescription().trim());
-		System.out.println(bindingResult);
 		productValidate.validate(watch, bindingResult);
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("categories", categoryDao.findAll());

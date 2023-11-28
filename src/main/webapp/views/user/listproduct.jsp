@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TÌM KIẾM</title>
+<title>Tìm Kiếm Sản phẩm</title>
 </head>
 <body>
 <%@include file="../../common/user/menuuser.jsp"%>
@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-3 col-lg-3">
-                <form class="filter">
+                <form class="filter form-check">
                     <label class="lb-chon-danhmuc">Chọn khoảng giá
                         <button onclick="searchFull(0)" class="btn-apdung">Áp dụng</button>
                     </label>
@@ -20,23 +20,23 @@
                         <input value="0-1000000000" type="radio" name="khoangia" checked="checked">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="radio-custom">DƯỚI 500.000đ
+                    <label class="radio-custom">Dưới 500,000đ
                         <input value="0-499000" type="radio" name="khoangia">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="radio-custom">500,000₫ - 1000,000₫
+                    <label class="radio-custom">500,000₫ - 1,000,000₫
                         <input value="500000-1000000" type="radio" name="khoangia">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="radio-custom">1000,000₫ - 1500,000₫
+                    <label class="radio-custom">1,000,000₫ - 1,500,000₫
                         <input value="1000000-1500000" type="radio" name="khoangia">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="radio-custom">1500,000₫ - 2000,000₫
+                    <label class="radio-custom">1,500,000₫ - 2,000,000₫
                         <input value="1500000-2000000" type="radio" name="khoangia">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="radio-custom">TRÊN 2000,000₫
+                    <label class="radio-custom">Trên 2,000,000₫
                         <input value="2000000-1000000000" type="radio" name="khoangia" >
                         <span class="checkmark"></span>
                     </label>
@@ -75,9 +75,12 @@
                 </form>
             </div>
             <div class="col-sm-12 col-md-9 col-lg-9">
+                <c:if test="$(listproduct.length == 0)">
+                    No result
+                </c:if>
+
                 <div class="row">
                     <div class="col-md-10 list-item row" id="listNewProduct">
-                        <!-- <p class="hienthisoluong">Hiển thị 1-12 của 46 kết quả</p> -->
                         <c:forEach items="${listproduct}" var="list">
                             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 single-item" >
                                 <a href="detail?id=${list.id}"><img class="img-item" src="${list.banner}"></a>
@@ -104,7 +107,6 @@
                             </ul>
                         </nav>
                     </div>
-                </div>
                 </div>
             </div>
         </div>

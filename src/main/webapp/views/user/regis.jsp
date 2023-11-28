@@ -13,7 +13,7 @@
 	<div class="regis-form">
 	     <div class="row">
 	         <div class="col-lg-5">
-	             <img src="template/user/image/logo-regis2.jpeg" class="img-regis">
+	             <img src="template/user/image/register.png" class="img-regis">
 	         </div>
 	         <div class="col-lg-7 content-regis">
 	         	<form:form method="post" action="regispost" enctype="multipart/form-data" modelAttribute="account">
