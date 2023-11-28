@@ -94,10 +94,6 @@ public class ProductAdminController {
 			BindingResult bindingResult, @RequestParam("listcolor") String listcolor[],
 			 @RequestParam("danhmuc") Integer danhmuc,@RequestParam("thuonghieu") Integer thuonghieu) {
 
-		if(listcolor.length == 0) {
-			bindingResult.rejectValue("listcolor", "invalid.typeMismatch", "The value is not of the correct type.");
-		}
-
 		watch.setName(watch.getName().trim());
 		watch.setDescription(watch.getDescription().trim());
 		productValidate.validate(watch, bindingResult);

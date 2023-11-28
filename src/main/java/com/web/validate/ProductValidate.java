@@ -20,7 +20,6 @@ public class ProductValidate implements Validator{
 	public void validate(Object target, Errors errors) {
 		Watch watch = (Watch) target;
 		ValidationUtils.rejectIfEmpty(errors, "name", "error.name", "Tên sản phẩm không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "price", "error.price", "Giá sản phẩm không được trống");
 		ValidationUtils.rejectIfEmpty(errors, "description", "error.description", "Mô tả không được trống");
 		if(watch.getId() == null) {
 			if(watch.getAnhnen().isEmpty()) {

@@ -25,7 +25,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 @Table(name = "watch")
 public class Watch {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
