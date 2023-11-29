@@ -65,12 +65,12 @@
                     	</label>
 	                 </div>
                     <c:forEach items="${listtrademark}" var="list">
-                    <div id="listsearchCategory">
-                        <label class="radio-custom">${list.name}
-	                        <input value="${list.id}" type="radio" name="thuonghieu">
-	                        <span class="checkmark"></span>
-                    	</label>
-                    </div>
+                        <div id="listsearchCategory">
+                            <label class="radio-custom">${list.name}
+                                <input value="${list.id}" type="radio" name="thuonghieu">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </c:forEach>
                 </form>
             </div>
@@ -135,14 +135,29 @@ function appendurl(page) {
 	}
 }
 </script>
-<script type="text/javascript">
-var url_string = window.location.href; 
-var url = new URL(url_string);
-var khoangia = url.searchParams.get("khoangia");
-if(khoangia != null){
-	
-}
-</script>
 <%@include file="../../common/user/footer.jsp"%>
 </body>
 </html>
+<script>
+    window.onload = function() {
+        "use strict"
+        const url = new URL(window.location.href);
+        const priceRange = url.searchParams.get("khoangia");
+        const category = url.searchParams.get("danhmuc")
+        const origin = url.searchParams.get("thuonghieu")
+        if(priceRange){
+            const selector = "input[value='" + priceRange + "']";
+            document.querySelector(selector).checked = true;
+        }
+
+        if(category) {
+            const selector = "input[value='" + category + "'][name='danhmuc']";
+            document.querySelector(selector).checked = true;
+        }
+
+        if(origin) {
+            const selector = "input[value='" + origin + "'][name='thuonghieu']";
+            document.querySelector(selector).checked = true;
+        }
+    }
+</script>

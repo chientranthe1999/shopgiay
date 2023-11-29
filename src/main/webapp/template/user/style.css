@@ -212,7 +212,8 @@ text-align: center;
   /* Create a custom radio button */
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     height: 16px;
     width: 16px;
