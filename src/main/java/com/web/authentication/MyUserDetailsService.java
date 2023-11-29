@@ -27,13 +27,11 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserInfo userInfo = userInfoDAO.findUserInfo(username);
-		System.out.println("UserInfo= " + userInfo);
 
 		if (userInfo == null) {
 			throw new UsernameNotFoundException("User " + username + " was not found in the database");
 		}
 
-		// [USER,ADMIN,..]
 		List<String> roles = userInfoDAO.getUserRoles(username);
 
 		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();

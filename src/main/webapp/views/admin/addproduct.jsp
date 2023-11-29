@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Thêm sản phẩm</title>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<%--<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>--%>
+<script src="https://cdn.tiny.cloud/1/yt2rl2ly7xbg83giohyz28tryp3fsrybshvh74i4l3rd7dd2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector : 'textarea#editor',

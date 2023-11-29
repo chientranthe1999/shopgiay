@@ -19,11 +19,11 @@ public class PasswordUpdateValidate implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		PasswordDto pass = (PasswordDto) target;
-		ValidationUtils.rejectIfEmpty(errors, "pass", "error.pass", "password không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "newpass", "error.newpass", "mật khẩu mới không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "renewpass", "error.renewpass", "không được để trống mật khẩu");
+		ValidationUtils.rejectIfEmpty(errors, "pass", "error.pass", "Mật khẩu cũ không được bỏ trống");
+		ValidationUtils.rejectIfEmpty(errors, "newpass", "error.newpass", "Mật khẩu mới không được trống");
+		ValidationUtils.rejectIfEmpty(errors, "renewpass", "error.renewpass", "Nhập lại mật khẩu không được để trống");
 		if(!pass.getNewpass().equals(pass.getRenewpass())) {
-			errors.rejectValue("renewpass", "error.renewpass", "mật khẩu mới không trùng khớp");
+			errors.rejectValue("renewpass", "error.renewpass", "Mật khẩu nhập lại không trùng khớp");
 		}
 		if(pass.getNewpass().length() < 4) {
 			

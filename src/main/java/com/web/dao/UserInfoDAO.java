@@ -34,7 +34,6 @@ public class UserInfoDAO {
 		query.setParameter("username", userName);
 		query.setParameter("enable", 1);
 		Account a = (Account) query.uniqueResult();
-		System.out.println("account-----: " + a);
 		UserInfo u = new UserInfo(a.getUsername(), a.getPassword());
 		return u;
 	}

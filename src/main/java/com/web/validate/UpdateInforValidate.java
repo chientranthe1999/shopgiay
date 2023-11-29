@@ -24,8 +24,8 @@ public class UpdateInforValidate implements Validator{
 	public void validate(Object target, Errors errors) {
 		Account account = (Account) target;
 		ValidationUtils.rejectIfEmpty(errors, "fullname", "error.fullname", "Họ tên không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "email", "error.email", "email không được trống");
-		ValidationUtils.rejectIfEmpty(errors, "address", "error.address", "address không được trống");
+		ValidationUtils.rejectIfEmpty(errors, "email", "error.email", "Email không được trống");
+		ValidationUtils.rejectIfEmpty(errors, "address", "error.address", "Địa chỉ không được trống");
 		ValidationUtils.rejectIfEmpty(errors, "phone", "error.phone", "Số điện thoại không được trống");
 	}
 }
